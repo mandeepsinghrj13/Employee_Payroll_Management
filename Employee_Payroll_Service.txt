@@ -54,3 +54,12 @@
 4.  update employee_payroll set gender = 'M' where name = 'Bill' or name = 'Charlie';		#update the gender by name
 5.  update employee_payroll set salary = 300000.00 where name = 'Terisa';		#update the salary by name
 6.  select * from employee_payroll;						#check data after update
+***************************************************
+	#Uc7
+***************************************************
+1.  select avg(salary)from employee_payroll where gender = 'M' group by gender;	#show avg salary use gender
+2.  select gender,avg(salary)from employee_payroll  group by gender;		#show avg salary from group by gender
+3.  select gender,count(name)from employee_payroll  group by gender;		#show count salary from group by gender
+4.  select gender,sum(salary)from employee_payroll  group by gender;		#show sum salary from group by gender
+5.  select gender,min(salary)from employee_payroll ;				#show min salary from table
+6.  select gender,max(salary)from employee_payroll ;				#show max salary from table
