@@ -23,3 +23,10 @@
     -> );
 
 2.  DESCRIBE employee_payroll;     	#describe a table
+***************************************************
+	#Uc3
+***************************************************
+1.  insert into employee_payroll ( name, salary, start) VALUES		#inserting a data into employee_payroll
+    ->    ('Bill',100000.00,'2018-01-03'),
+    ->    ('Terisa',200000.00,'2019-11-13'),
+    -> ('Charlie',300000.00,'2020-05-21');
