@@ -34,3 +34,14 @@
 	#Uc4
 ***************************************************
 1.  select * from employee_payroll;	# retrieving records from table
+
+***************************************************
+	#Uc5
+***************************************************
+1.  select salary from employee_payroll where name = 'Bill';	#selecting bill entry
+2.  select * from employee_payroll 
+     WHERE start BETWEEN 
+     CAST('2018-01-01' AS DATE) AND DATE(NOW());    	#select employee from date range
+3.  select * from employee_payroll 
+     WHERE start BETWEEN 
+     CAST('2019-01-01' AS DATE) AND DATE(NOW());    	#select employee from date range
