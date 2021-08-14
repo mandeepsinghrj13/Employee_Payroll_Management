@@ -3,10 +3,23 @@
 ***************************************************
           	#Uc1
 *************************************************
-create database payroll_service;
+1.  create database payroll_service;	#Create a database
 
-show databases;
+2.  show databases;			#Show the database
 
-use payroll_service;
+3.  use payroll_service;		#To USE payroll_service database
 
-select database();
+4.  select database();			#To see current database
+***************************************************
+	#Uc2
+***************************************************
+1.  create table employee_payroll				#create a table
+    -> (
+    ->  id              INT unsigned NOT NULL AUTO_INCREMENT,	#Inique ID for the record
+    ->  name    VARCHAR(150) NOT NULL,			#name of thr employee
+    ->  salary  Double NOT NULL,				#Employee salary
+    ->  start   DATE NOT NULL,					#Employee start date
+    ->  PRIMARY KEY (id)					#make id primary key
+    -> );
+
+2.  DESCRIBE employee_payroll;     	#describe a table
