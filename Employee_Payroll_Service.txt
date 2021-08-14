@@ -45,3 +45,12 @@
 3.  select * from employee_payroll 
      WHERE start BETWEEN 
      CAST('2019-01-01' AS DATE) AND DATE(NOW());    	#select employee from date range
+***************************************************
+	#Uc6
+***************************************************
+1.  alter table employee_payroll add gender CHAR(1) after name;			# adding Gender field
+2.  describe employee_payroll;							#show the table structure 
+3.  update employee_payroll set gender = 'F' where name = 'Terisa';			#update the gender by name
+4.  update employee_payroll set gender = 'M' where name = 'Bill' or name = 'Charlie';		#update the gender by name
+5.  update employee_payroll set salary = 300000.00 where name = 'Terisa';		#update the salary by name
+6.  select * from employee_payroll;						#check data after update
