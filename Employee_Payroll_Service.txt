@@ -61,5 +61,16 @@
 2.  select gender,avg(salary)from employee_payroll  group by gender;		#show avg salary from group by gender
 3.  select gender,count(name)from employee_payroll  group by gender;		#show count salary from group by gender
 4.  select gender,sum(salary)from employee_payroll  group by gender;		#show sum salary from group by gender
-5.  select gender,min(salary)from employee_payroll ;				#show min salary from table
-6.  select gender,max(salary)from employee_payroll ;				#show max salary from table
+5.  select gender,min(salary)from employee_payroll ;			#show min salary from table
+6.  select gender,max(salary)from employee_payroll ;			#show max salary from table
+
+***************************************************
+	#Uc8
+***************************************************
+1.  desc employee_payroll;
+1.  describe employee_payroll;					#both are same for describe for table
+2.  alter table employee_payroll add phone BIGINT;			#add phone number
+3.  alter table employee_payroll add Department VARCHAR(250);	#add department
+4.  alter table employee_payroll add Address VARCHAR(250);		#add address
+5.  select * from employee_payroll;				#show table
+6.  alter table employee_payroll alter Address SET DEFAULT 'mumbai';
