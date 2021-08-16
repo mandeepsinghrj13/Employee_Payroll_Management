@@ -107,3 +107,75 @@
 24. update employee_payroll set NetPay = 190000 Where id='1';
 25. update employee_payroll set NetPay = 170000 Where id='2';
 26. update employee_payroll set NetPay = 180000 Where id='3';
+
+********************************************************************************************************************************
+UC 10 And 11 : Ability to make Terissa as part of Sales and Marketing Department.Draw the ER Diagram for
+                Payroll Service DB. Implement the ER Diagram into Payroll Service DB
+
+********************************************************************************************************************************
+1.  create table Department (department varchar(250)NOT NULL,primary key (department));
+
+2.  insert into Department (department) values( 'sales'),('Merketing');
+
+3.  select * from Department;
+   +------------+
+   | department |
+   +------------+
+   | Merketing  |
+   | sales      |
+   +------------+
+2 rows in set (0.00 sec)
+
+4.  create table Employee (id int, compID int, PhoneNumber BIGINT(15), Address VARCHAR(25), gender char(1), primary key (id));
+     Query OK, 0 rows affected, 1 warning (0.52 sec)
+
+5.  insert into Employee (id, compID, PhoneNumber, Address, gender) values
+      -> (1,10,7778527779,'Mumbai','F'),
+      -> (2,11,7778528889,'Mumbai','M');
+      Query OK, 2 rows affected (0.45 sec)
+      Records: 2  Duplicates: 0  Warnings: 0
+
+6.  select * from Employee;
+   +----+--------+-------------+---------+--------+
+   | id | compID | PhoneNumber | Address | gender |
+   +----+--------+-------------+---------+--------+
+   |  1 |     10 |  7778527779 | Mumbai  | F      |
+   |  2 |     11 |  7778528889 | Mumbai  | M      |
+   +----+--------+-------------+---------+--------+
+  2 rows in set (0.00 sec)
+
+7.  create table Emp_Department (empID int, Depart varchar(250) NOT NULL, FOREIGN KEY (empID) REFERENCES Employee (id),
+     -> FOREIGN KEY (Depart) REFERENCES Department (department), PRIMARY KEY (empID, Depart));
+     Query OK, 0 rows affected (2.21 sec)
+
+8.  describe Emp_Department;
+	+--------+--------------+------+-----+---------+-------+
+	| Field  | Type         | Null | Key | Default | Extra |
+	+--------+--------------+------+-----+---------+-------+
+	| empID  | int          | NO   | PRI | NULL    |       |
+	| Depart | varchar(250) | NO   | PRI | NULL    |       
+	+--------+--------------+------+-----+---------+-------+
+	2 rows in set (0.13 sec)
+
+9.  insert into Emp_Department (empID, Depart) VALUES (1, 'Merketing');
+     Query OK, 1 row affected (0.28 sec)
+
+10. insert into Emp_Department (empID, Depart) VALUES (2, 'Merketing');
+     Query OK, 1 row affected (0.11 sec)
+
+11. insert into Emp_Department (empID, Depart) VALUES (2, 'Sales');
+     Query OK, 1 row affected (0.08 sec)
+
+12. insert into Emp_Department (empID, Depart) VALUES (1, 'Sales');
+     Query OK, 1 row affected (0.16 sec)
+
+13. select * from Emp_Department;
+	+-------+-----------+
+	| empID | Depart    |
+	+-------+-----------+
+	|     1 | Merketing |
+	|     2 | Merketing |
+	|     1 | Sales     |
+	|     2 | Sales     |
+	+-------+-----------+
+	4 rows in set (0.00 sec)
