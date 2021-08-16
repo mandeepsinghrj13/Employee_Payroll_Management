@@ -74,3 +74,36 @@
 4.  alter table employee_payroll add Address VARCHAR(250);		#add address
 5.  select * from employee_payroll;				#show table
 6.  alter table employee_payroll alter Address SET DEFAULT 'mumbai';
+
+***************************************************
+	#Uc9
+***************************************************
+*************#Add columns basicPay, Deductions, TaxablePay, IncomeTax, NetPay  and update datas into Rows**********************
+
+1.  alter table employee_payroll add basicPay Double;
+2.  alter table employee_payroll add Deductions Double;
+3.  alter table employee_payroll add TaxablePay Double;
+4.  alter table employee_payroll add IncomeTax Double;
+5.  alter table employee_payroll add NetPay Double;
+6.  select * from employee_payroll;
+7.  insert into employee_payroll (name, gender, salary, start, phone, Department, Address, basicPay, Deductions, TaxablePay, IncomeTax, NetPay)
+    -> VALUES('Terisa','F',300000.00,'2018-01-03',1234567899,'Marketing','Mumbai',300000.00,100000.00,200000.00,500000.00,15000000.00);
+8.  update employee_payroll set Department = 'Sales' Where id='2';
+9.  update employee_payroll set Department = 'Sales' Where id='1';
+10. update employee_payroll set Department = 'Marketing' Where id='3';
+11. update employee_payroll set phone = 9874561230 Where id='3';
+12. update employee_payroll set phone = 9800061230 Where id='2';
+13. update employee_payroll set phone = 9800980000 Where id='1';
+14. update employee_payroll set Address = 'Mumbai' Where id='1' or '2' or '3';
+15. update employee_payroll set basicPay = 300000.00 Where id='1' or '2' or '3';
+16. select * from employee_payroll;
+17. update employee_payroll set Deductions = 900000 Where id='1';
+18. update employee_payroll set Deductions = 800000 Where id='2';
+19. update employee_payroll set Deductions = 700000 Where id='3';
+20. update employee_payroll set TaxablePay = 70000 Where id='3';
+21. update employee_payroll set TaxablePay = 80000 Where id='2';
+22. update employee_payroll set TaxablePay = 90000 Where id='1';
+23. update employee_payroll set IncomeTax = 50000 Where id='1' or '2' or '3' or '4';
+24. update employee_payroll set NetPay = 190000 Where id='1';
+25. update employee_payroll set NetPay = 170000 Where id='2';
+26. update employee_payroll set NetPay = 180000 Where id='3';
