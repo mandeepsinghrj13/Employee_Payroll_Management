@@ -179,3 +179,24 @@ UC 10 And 11 : Ability to make Terissa as part of Sales and Marketing Department
 	|     2 | Sales     |
 	+-------+-----------+
 	4 rows in set (0.00 sec)
+
+***************************************************
+	#Uc12
+***************************************************
+
+
+1.  select * from Emp_Department where empId = 1;
+	+-------+-----------+
+	| empID | Depart    |
+	+-------+-----------+
+	|     1 | Merketing |
+	|     1 | Sales     |
+	+-------+-----------+
+	2 rows in set (0.00 sec)
+2.  select * from Department where department = 'Sales';
+	+------------+
+	| department |
+	+------------+
+	| sales      |
+	+------------+
+	1 row in set (0.00 sec)
